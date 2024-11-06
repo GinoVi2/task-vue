@@ -4,7 +4,7 @@
             <v-col cols="12" md="4">
                 <v-card>
                     <v-card-item>
-                        <v-card-title> Lista de Tareas </v-card-title>
+                        <v-card-title> Agrega una nueva tarea </v-card-title>
                     </v-card-item>
                     <v-card-text>
                         <v-text-field
@@ -21,12 +21,12 @@
                     <v-card-text>
                         <v-radio-group v-model="filter">
                             <v-radio
-                                :value="true"
+                                value="completed"
                                 label="Completadas"
                                 hide-details
                             ></v-radio>
                             <v-radio
-                                :value="false"
+                                value="pending"
                                 label="Sin completar"
                                 hide-details
                             ></v-radio>
@@ -71,20 +71,36 @@ const taskList = ref([
         name: "Tarea 4",
         completed: false,
     },
+    {
+        id: 5,
+        name: "Tarea 5",
+        completed: false,
+    },
+    {
+        id: 6,
+        name: "Tarea 6",
+        completed: false,
+    },
 ]);
 
 const filteredList = computed(() => {
-    return taskList.value.filter((task) => task.completed == filter.value);
+    if (filter.value == "completed") {
+        return taskList.value.filter((task) => task.completed == true);
+    } else if (filter.value == "pending") {
+        return taskList.value.filter((task) => task.completed == false);
+    }
+    return taskList.value;
 });
 
 const newTask = ref("");
 
-const filter = ref(true);
+const filter = ref("");
 
 const addTask = () => {
     if (newTask.value == "") return;
 
-    taskList.value.push({ id: 5, name: newTask.value, completed: false });
+    //Obtener el ultimo id de la lista de tarea
+    taskList.value.push({ id: 7, name: newTask.value, completed: false });
 };
 
 const completeTask = (tarea) => {
