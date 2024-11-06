@@ -1,11 +1,13 @@
 <template>
     <v-card class="mb-3 bg-success">
-        <v-card-title>
-            {{ task.name }}
-        </v-card-title>
-        <v-card-subtitle>
-            {{ isCompleted }}
-        </v-card-subtitle>
+        <v-card-item>
+            <v-card-title>
+                {{ task.name }}
+            </v-card-title>
+            <v-card-subtitle>
+                {{ isCompleted }}
+            </v-card-subtitle>
+        </v-card-item>
         <v-card-actions class="d-flex justify-space-around">
             <v-btn
                 :disabled="task.completed ? true : false"

@@ -30,6 +30,11 @@
                                 label="Sin completar"
                                 hide-details
                             ></v-radio>
+                            <v-radio
+                                value=""
+                                label="Quitar filtro"
+                                hide-details
+                            ></v-radio>
                         </v-radio-group>
                     </v-card-text>
                 </v-card>
@@ -99,8 +104,11 @@ const filter = ref("");
 const addTask = () => {
     if (newTask.value == "") return;
 
-    //Obtener el ultimo id de la lista de tarea
-    taskList.value.push({ id: 7, name: newTask.value, completed: false });
+    taskList.value.push({
+        id: 7,
+        name: newTask.value,
+        completed: false,
+    });
 };
 
 const completeTask = (tarea) => {
