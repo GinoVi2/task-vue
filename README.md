@@ -1,13 +1,19 @@
-# Vue 3
+# Lista de Tareas + Vue 3
 
-## Lista de Tareas
+Este proyecto es una aplicación para gestionar Tareas, creada con Vue y Vuetify.
+
+## Instalación
 
 Para instalar el proyecto, ejecutar el comando:
 
-`    npm install`
+```bash
+npm install
+```
 
 Y luego
 
-`    npm run dev`
+```bash
+npm run dev
+```
 
 Podrás visualizar la lista de tareas, agregar, remover y filtrar.
