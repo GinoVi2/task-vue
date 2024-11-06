@@ -8,6 +8,7 @@
                     </v-card-item>
                     <v-card-text>
                         <v-text-field
+                            @keypress.enter="addTask"
                             hide-details
                             v-model="newTask"
                             label="Tarea"
@@ -109,6 +110,7 @@ const addTask = () => {
         name: newTask.value,
         completed: false,
     });
+    newTask.value = "";
 };
 
 const completeTask = (tarea) => {
